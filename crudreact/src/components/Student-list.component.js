@@ -25,12 +25,12 @@ const StudentList = () => {
 
   return (
     <div className="table-wrapper">
-      <Table striped border hover>
+      <Table striped bordered hover>
         <thead>
           <tr>
-            <th>Nome</th>
+            <th>Name</th>
             <th>Email</th>
-            <th>Roll no</th>
+            <th>Roll No</th>
             <th>Action</th>
           </tr>
         </thead>
