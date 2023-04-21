@@ -12,15 +12,15 @@ const CreateStudent = () => {
   // onSubmit handler
   const onSubmit = studentObject => {
     axios.post(
-'http://localhost:4000/students/create-student', 
+'http://localhost:3000/create-student', 
     studentObject)
       .then(res => {
         if (res.status === 200)
-          alert('Student successfully created')
+          alert('Aluno criado com sucesso!')
         else
           Promise.reject()
       })
-      .catch(err => alert('Something went wrong'))
+      .catch(err => alert('Algo deu errado'))
   }
     
   // Return student form
@@ -28,7 +28,7 @@ const CreateStudent = () => {
     <StudentForm initialValues={formValues} 
       onSubmit={onSubmit} 
       enableReinitialize>
-      Create Student
+      Criar Aluno
     </StudentForm>
   )
 }

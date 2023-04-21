@@ -7,7 +7,7 @@ const StudentForm = (props) => {
   const validationSchema = Yup.object().shape({
     name: Yup.string().required("Required"),
     email: Yup.string()
-      .email("You have enter an invalid email address")
+      .email("Insira um e-mail válido")
       .required("Required"),
     rollno: Yup.number()
       .positive("Invalid roll number")
@@ -16,11 +16,12 @@ const StudentForm = (props) => {
   });
   console.log(props);
   return (
-    <div className="form-wrapper">
+    <div className="form-wrapper my-4">
       <Formik {...props} validationSchema={validationSchema}>
         <Form>
           <FormGroup>
-            <Field name="name" type="text" className="form-control" />
+            <label htmlFor="nome">Nome</label>
+            <Field name="name" type="text" className="form-control my-3" />
             <ErrorMessage
               name="name"
               className="d-block invalid-feedback"
@@ -28,7 +29,8 @@ const StudentForm = (props) => {
             />
           </FormGroup>
           <FormGroup>
-            <Field name="email" type="text" className="form-control" />
+          <label htmlFor="email">E-mail</label>
+            <Field name="email" type="text"  className="form-control my-3" />
             <ErrorMessage
               name="email"
               className="d-block invalid-feedback"
@@ -36,6 +38,7 @@ const StudentForm = (props) => {
             />
           </FormGroup>
           <FormGroup>
+          <label htmlFor="rollon">Rollon</label>
             <Field name="rollno" type="number" className="form-control" />
             <ErrorMessage
               name="rollno"
@@ -43,7 +46,7 @@ const StudentForm = (props) => {
               component="span"
             />
           </FormGroup>
-          <Button variant="danger" size="lg" block="block" type="submit">
+          <Button variant="danger" size="lg" block="block" type="submit" className="mt-4">
             {props.children}
           </Button>
         </Form>
